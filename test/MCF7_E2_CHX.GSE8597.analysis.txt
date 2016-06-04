@@ -1,0 +1,8 @@
+gse	GSE8597
+gpl	GPL570
+samples	MCF7_E2_CHX.GSE8597.samples.txt
+
+contrast	E2-EtOH
+contrast	CHX_E2-CHX_EtOH
+contrast	CHX_E2-EtOH
+contrast	CHX_E2+E2-CHX_EtOH-EtOH

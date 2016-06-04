@@ -1,0 +1,14 @@
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# R
+.RData
+.Rhistory
+
+# geo files (GeoData/)
+GeoData/*.annot.gz
+GeoData/*.soft
+GeoData/*_series_matrix.txt.gz
+
