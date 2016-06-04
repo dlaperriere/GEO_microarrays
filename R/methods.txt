@@ -1,0 +1,29 @@
+
+Differential expression analysis using the limma R/Bioconductor package. P-values are adjusted for multiple comparisons with the Benjamini & Hochberg method.
+
+
+References
+
+  Bioconductor: Open software development for computational biology and
+  bioinformatics R. Gentleman, V. J. Carey, D. M. Bates, B.Bolstad, M.
+  Dettling, S. Dudoit, B. Ellis, L. Gautier, Y. Ge, and others 2004,
+  Genome Biology, Vol. 5, R80
+
+   Smyth, GK (2005). Limma: linear models for microarray data. In:
+  'Bioinformatics and Computational Biology Solutions using R and
+  Bioconductor'. R. Gentleman, V. Carey, S. Dudoit, R. Irizarry, W.
+  Huber (eds), Springer, New York, pages 397-420.
+  
+  Benjamini, Y., and Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. 
+  Journal of the Royal Statistical Society Series B 57, 289-300.
+  
+  
+  
+Column	description
+logFC	estimate of the log2-fold-change corresponding to the effect or contrast (for topTableF there may be several columns of log-fold-changes)
+AveExpr	average log2-expression for the probe over all arrays and channels, same as Amean in the MarrayLM object
+t	moderated t-statistic 
+P.Value	raw p-value
+adj.P.Value	adjusted p-value or q-value
+
+

@@ -1,0 +1,3 @@
+GPL	Gene	GeneID	Transcript	platform
+GPL570	Gene.Symbol	entrez_gene_id	gb_acc	Affymetrix Human Genome U133 Plus 2.0 Array
+GPL10558	ilmn_gene	entrez_gene_id	gb_acc	Illumina HumanHT-12 V4.0 expression beadchip

@@ -1,0 +1,6 @@
+GPL	Gene	GeneID	Transcript	platform
+GPL570	Gene.symbol	Gene.ID	GenBank.Accession	Affymetrix Human Genome U133 Plus 2.0 Array
+GPL10558	Gene.symbol	Gene.ID	GenBank.Accession	Illumina HumanHT-12 V4.0 expression beadchip
+GPL96	Gene.symbol	Gene.ID	GenBank.Accession	Affymetrix Human Genome U133A Array
+GPL1261	Gene.symbol	Gene.ID	GenBank.Accession	Affymetrix Mouse Genome 430 2.0 Array
+GPL13667	gene.symbol	entrez.gene	representative.public.id	Affymetrix Human Genome U219 Array
