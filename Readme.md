@@ -27,7 +27,7 @@ GSM213330     | MCF7_EtOH_24h_rep1              | EtOH
   
 ### Output
 
-- text version of the differential expression analysis results for each contrats in the DiffExpression folder
+- text version of the differential expression analysis results for each contrast in the DiffExpression folder
 - QC figures in the Figure folder
 - RData file with the ExpressionSet object
 - Excel file with all the differential expression analysis results
