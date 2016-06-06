@@ -28,7 +28,7 @@ Run a command and return output,status (0 ok, -1 error)
 Find path to R scripting front-end(Rscript) 
 
 
-Try Rscript, $R_HOME and HKLM\SOFTWARE\R-core\R*\InstallPath
+Try Rscript, $R_HOME, whereis Rscript and HKLM\SOFTWARE\R-core\R*\InstallPath
 
 
 ### runR
