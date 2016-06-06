@@ -149,6 +149,16 @@ if (!is.null(parameters$verbose)) {
     contrast
 }
 
+if (!all(length(gse_samples$ID) == length(colnames(gset)))) {
+  print( paste("ID:", length(gse_samples$ID)) )
+  print( paste("GEO ExpressionSet:",length(colnames(gset))) )
+  stop( "sample ID and expression set must be the same length...")
+}
+
+if (!all(gse_samples$ID == colnames(gset))) {
+  print(gse_samples$ID == colnames(gset))
+  stop( "sample ID and expression set must be the in the same order...")
+}
 
 # set design and contrast
 gset$description <- fl
