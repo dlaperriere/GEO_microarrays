@@ -1,0 +1,6 @@
+gse	GSE8597
+gpl	GPL570
+samples	bad.samples.txt
+
+contrast	E2-EtOH
+contrast	CHX_E2-CHX_EtOH
