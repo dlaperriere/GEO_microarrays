@@ -234,6 +234,8 @@ def main():
             parameters["gse"], parameters["samples"], parameters["gpl"], gpl_info, contrast)
         out, status = r.runR(r=Rpath, script=analysis_script, args=rargs)
         print(out)
+        if status == -1:
+              exit(-1) 
 
     # create excel file with all contrasts
     excel_file = "DiffExpression.{}.xlsx".format(parameters["gse"])
