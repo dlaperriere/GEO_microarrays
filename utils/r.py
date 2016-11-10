@@ -46,7 +46,7 @@ def findR():
                     # Rscript: /usr/bin/Rscript /usr/bin/X11/Rscript
                     wrscript = whereis_info.split()
                     if len(wrscript) >= 2:
-                       R = wrscript[1]
+                        R = wrscript[1]
     return R
 
 
@@ -63,7 +63,7 @@ def runR(r=findR(), script="", args=""):
          - output,status (0=ok -1=error)
     """
     r_cmd = " ".join((r, script, args))
-    print ("\nrunning R cmd: {}\n".format(r_cmd))
+    print("\nrunning R cmd: {}\n".format(r_cmd))
     return cmd.run(r_cmd)
 
 
@@ -71,8 +71,8 @@ def test():
     r = findR()
     if r is None:
         print("Could not find R scripting front-end path (Rscript)")
-        exit(-1)    
-    print("findR:",r)
+        exit(-1)
+    print("findR:", r)
     runR(r, "", "--version")
 
 if __name__ == '__main__':

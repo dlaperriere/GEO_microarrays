@@ -27,14 +27,16 @@ def on_windows():
     """ Is the current operating system windows? """
     return sys.platform == 'win32'
 
+
 def use_shell():
     if on_windows():
         return False
     return True
 
+
 def can_run(cmd):
     """ Test a command """
-   
+
     try:
         out = subprocess.check_call(cmd, shell=use_shell())
     except:
@@ -47,7 +49,8 @@ def run(cmd):
     out = ""
 
     try:
-        out = subprocess.check_output(cmd, universal_newlines=True, shell=use_shell())
+        out = subprocess.check_output(
+            cmd, universal_newlines=True, shell=use_shell())
     except:
         return (out, -1)
     return (out, 0)

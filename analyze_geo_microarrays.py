@@ -38,13 +38,12 @@ import csv
 import glob
 import os
 import re
-import sys
 import textwrap
 
 from openpyxl import Workbook
 from openpyxl.drawing.image import Image
 
-from utils import cmd, r
+from utils import r
 
 __version_info__ = (1, 0)
 __version__ = '.'.join(map(str, __version_info__))
@@ -125,12 +124,12 @@ def excel_add_tsv(filename, title, workbook):
          - title: worksheet name
          - workbook: openpyxl workbook
     """
-    invalid_char = r'[\\*?:/\[\]]' # http://openpyxl.readthedocs.io/en/2.3.3/_modules/openpyxl/workbook/child.html
+    invalid_char = r'[\\*?:/\[\]]'  # http://openpyxl.readthedocs.io/en/2.3.3/_modules/openpyxl/workbook/child.html
     title = re.sub(invalid_char, '_', title)
     max_length = 31
     if len(title) > max_length:
-        title = title[0:max_length-1]
-        
+        title = title[0:max_length - 1]
+
     ws = workbook.create_sheet(title=title)
 
     with open(filename) as tab_file:
@@ -158,19 +157,19 @@ def excel_diffexpression(parameters, excel_file):
     excel_add_tsv(methods, "Methods", wb)
 
     diffexp_files = glob.glob('DiffExpression/diffexp.*.txt')
-    for file in diffexp_files:
+    for diffexp_file in diffexp_files:
         print('.', end=' ')
-        contrast = os.path.basename(file)
+        contrast = os.path.basename(diffexp_file)
         contrast = re.sub(r"diffexp.GSE\w*.", "", contrast)
         contrast = re.sub(r".txt", "", contrast)
-        excel_add_tsv(file, contrast, wb)
+        excel_add_tsv(diffexp_file, contrast, wb)
 
     images_files = glob.glob('Figures/*.png')
     ws = wb.create_sheet(title="Figures")
     linenum = 1
-    for file in images_files:
+    for image_file in images_files:
         print('.', end=' ')
-        img = Image(file)
+        img = Image(image_file)
         ws.add_image(img, "A{}".format(linenum))
         linenum += 28
 
@@ -235,7 +234,7 @@ def main():
         out, status = r.runR(r=Rpath, script=analysis_script, args=rargs)
         print(out)
         if status == -1:
-              exit(-1) 
+            exit(-1)
 
     # create excel file with all contrasts
     excel_file = "DiffExpression.{}.xlsx".format(parameters["gse"])
