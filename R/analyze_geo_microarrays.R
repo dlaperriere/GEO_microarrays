@@ -72,7 +72,7 @@ if (!is.null(parameters$help)) {
     
     cat("---------------------------------------\n")
     cat(paste("Usage: ", self, " --contrast|-c treat-ctrl --gse|-g GSE8597 --gse_samples|-s samples.txt --gpl|-p GPL570 --gpl_info|-i gpl_info.txt \n", sep = ""))
-    q(status = -1)
+    q(status = 0)
 }
 
 
