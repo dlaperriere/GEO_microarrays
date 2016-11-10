@@ -4,6 +4,10 @@
 # getopt  : C-like getopt behavior                                                              
 # gplots  : Various R Programming Tools for Plotting Data 
 
+r <- getOption("repos")             # hard code the US repo for CRAN
+r["CRAN"] <- "http://cran.us.r-project.org"
+options(repos = r)
+
 cran_pkg = c("corrgram", "getopt", "gplots")
 
 for(pkg in cran_pkg){
