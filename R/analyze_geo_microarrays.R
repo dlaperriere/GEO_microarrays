@@ -36,6 +36,10 @@ for(pkg in Rpkg){
   suppressPackageStartupMessages(require(pkg, character.only=TRUE))
 } 
 
+# set GEOquery download file method
+if(capabilities("libcurl")){
+     options('download.file.method.GEOquery' = 'libcurl')
+}
 
 ###############################################################
 # Parameters
@@ -241,19 +245,19 @@ boxplot_figname = paste("Figures/boxplot", gse, "png", sep = ".")
 if(!file.exists(boxplot_figname)){
 
 # Expression boxplot
- png(filename = boxplot_figname, width = figwidth, height = figheight, antialias = "default") 
+ png(filename = boxplot_figname, width = figwidth, height = figheight) 
  # par(mar=c(2+round(max(nchar(colnames(ex)))/2),4,2,1))
  title <- paste(gse, sep = "")
  boxplot(ex, boxwex = 0.6, notch = F, main = title, outline = FALSE, las = 2, col = as.factor(colnames(ex)))
  dev.off()
 
 # N most variable genes correlogram/heatmap
- png(filename = paste("Figures/correlogram", gse, "topvar.png", sep = "."), width = figwidth, height = figheight, antialias = "default")
+ png(filename = paste("Figures/correlogram", gse, "topvar.png", sep = "."), width = figwidth, height = figheight)
  title <- paste(" ", gse, " (", n_mostvargenes, " most variable genes)", sep = "")
  corrgram(ex[topvar, ], order = FALSE, lower.panel = panel.shade, upper.panel = panel.pie, text.panel = panel.txt, main = title)
  dev.off()
 
- png(filename = paste("Figures/heatmap", gse, "topvar.png", sep = "."), width = figwidth, height = figheight, antialias = "default")
+ png(filename = paste("Figures/heatmap", gse, "topvar.png", sep = "."), width = figwidth, height = figheight)
  title <- gse
  ytitle <- paste(n_mostvargenes, " most variable genes", sep = "")
  heatmap.2(ex[topvar, ], trace = "none", density.info = "none", col = greenred(10), dendrogram = "column", ylab = ytitle, margins = c(7, 7), main = gse)
