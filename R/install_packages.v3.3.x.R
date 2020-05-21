@@ -13,22 +13,28 @@ cran_pkg = c("corrgram", "getopt", "gplots")
 for(pkg in cran_pkg){
  print(pkg)
   if (!require(pkg, character.only=TRUE)) install.packages(pkg)
+
 }
 
 ################################################################
-## Bioconductor packages  R version >= 3.5 
+## Bioconductor packages
 
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+if (!require("Biobase")) {
+ source("http://bioconductor.org/biocLite.R") #biocLite("BiocUpgrade")
+ biocLite()
+} 
 
 # limma   : Linear Models for Microarray Data                URL: http://bioconductor.org/packages/release/bioc/html/limma.html
 # GEOquery: Get data from NCBI Gene Expression Omnibus (GEO)
 bioc_pkg = c("limma","GEOquery")
 
 for(pkg in bioc_pkg){
- print(pkg)
-  if (!require(pkg, character.only=TRUE)) BiocManager::install(pkg)
-}
+  print(pkg)
+  if (!require(pkg, character.only=TRUE)) {
+    source("http://bioconductor.org/biocLite.R")
+    biocLite(pkg)
+  } 
+} 
 
 # Lists all the packages installed locally
 #library()
