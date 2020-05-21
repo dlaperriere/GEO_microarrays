@@ -32,10 +32,10 @@ script_path = os.path.abspath("./analyze_geo_microarrays.py")
 
 
 class TestPythonAnalyzeGeo(unittest.TestCase):
-    """ Test analyze_geo_microarrays.py with python v2 & v3  """
+    """ Test analyze_geo_microarrays.py v3  """
 
-    def test_python2(self):
-        ok = cmd.can_run("python2 {} -h".format(script_path))
+    def test_python(self):
+        ok = cmd.can_run("python {} -h".format(script_path))
         self.assertTrue(ok)
 
     def test_python3(self):

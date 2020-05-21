@@ -5,7 +5,7 @@ Description
  Test the python versions available on the system
 
 Note
- - works with python 2.7 and 3.5
+ - works with python 3.5+
 
 Author
   David Laperriere <dlaperriere@outlook.com>
@@ -32,6 +32,10 @@ script_path = os.path.abspath("../")
 
 class TestPython(unittest.TestCase):
     """ Test availability of python v2 & v3  """
+
+    def test_python(self):
+        ok = cmd.can_run("python -V")
+        self.assertTrue(ok)
 
     def test_python2(self):
         ok = cmd.can_run("python2 -V")
