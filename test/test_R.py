@@ -5,7 +5,7 @@ Description
  Test the R version available on the system
 
 Note
- - works with python 2.7 and 3.5
+ - works with python 3.5+
 
 Author
   David Laperriere <dlaperriere@outlook.com>
