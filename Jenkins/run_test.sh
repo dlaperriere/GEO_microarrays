@@ -24,7 +24,12 @@ fi
 ## Create virtualenv and install necessary packages
 
 echo "setup virtualenv"
-virtualenv --no-site-packages $PYENV_HOME
+if hash virtualenv 2>/dev/null; then
+  virtualenv --no-site-packages $PYENV_HOME --python=python3
+else
+  python -m venv $PYENV_HOME
+fi
+
 . $PYENV_HOME/bin/activate
 pip install --quiet nosexcover
 pip install --quiet pylint

@@ -20,12 +20,18 @@ rmdir /S /Q %PYENV_HOME%\
 rem Create virtualenv and install necessary packages
 
 echo "setup virtualenv"
-virtualenv --no-site-packages %PYENV_HOME%
+rem virtualenv --no-site-packages %PYENV_HOME%
+python -m venv %PYENV_HOME% --upgrade
 call %PYENV_HOME%\Scripts\activate.bat
-pip install --quiet nosexcover
-pip install --quiet pylint
+rem pip install --quiet nosexcover
+rem pip install --quiet pylint
+easy_install nosexcover
+easy_install pylint
 rem pip install --quiet %WORKSPACE%\  # where your setup.py lives
-pip install --quiet -r requirements.txt
+
+rem pip install --quiet -r requirements.txt
+easy_install Pillow
+easy_install openpyxl
 
 
 rem Run tests 
