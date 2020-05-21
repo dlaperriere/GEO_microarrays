@@ -146,7 +146,7 @@ def excel_diffexpression(parameters, excel_file):
          - parameters: analysis parameters dictionary
          - excel_file: excel file name
     """
-    wb = Workbook(guess_types=True)
+    wb = Workbook()
     ws = wb.active
 
     ws.title = "Dataset"
