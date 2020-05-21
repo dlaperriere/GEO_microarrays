@@ -75,9 +75,9 @@ Differential expression analysis using the limma R/Bioconductor package. P-value
   
 ### Version
 
-  Python 2.7.11 & 3.5.1
+  Python 3.8.2
   
-  R 3.3.1
+  R 3.6.3
   
 ### Copyright
 
