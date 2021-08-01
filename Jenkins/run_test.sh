@@ -25,7 +25,7 @@ fi
 
 echo "setup virtualenv"
 if hash virtualenv 2>/dev/null; then
-  virtualenv --no-site-packages $PYENV_HOME --python=python3
+  virtualenv $PYENV_HOME --python=python3
 else
   python -m venv $PYENV_HOME
 fi
